@@ -1,0 +1,15 @@
+.button-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: aqua;
+    padding: 10px;
+}
+
+.button-row :hover {
+    opacity: 95%;
+}
+
+.button-row a {
+    margin-right: 5px;
+}

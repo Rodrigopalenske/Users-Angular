@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+button.form {
+    background-color: #28a745;
+    color: white;
+    width: 100px;
+    height: 32px;
+    font-size: 14.05px;
+
+}
+
+.password-info ul {
+    justify-items: start;
+    font-size: 12px;
+}
+
+.password-info li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.content-user-form {
+    text-align: center;
+    border: ridge;
+    margin: 21vh;
+    border-radius: 6px;
+    background-color: antiquewhite;
+}
+.form-field {
+    min-width: 400px;
+    max-width: 900px;
+    width: 95%;
+}
+
+@media (max-width: 600px) {
+    .content-user-form {
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 854px) {
+    .content-user-form {
+        margin-right: 14vh;
+        margin-left: 14vh;
+    }
+}
+
+@media (min-width: 855px) and (max-width: 1215px) {
+    .content-user-form {
+        margin-right: 23vh;
+        margin-left: 23vh;
+    }
+
+}
+@media (min-width: 1216px) {
+    .content-user-form {
+        margin-right: 46vh;
+        margin-left: 46vh;
+    }
+}
