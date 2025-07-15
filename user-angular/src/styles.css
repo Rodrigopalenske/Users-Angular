@@ -24,7 +24,9 @@ button.form {
 .content-user-form {
     text-align: center;
     border: ridge;
-    margin: 21vh;
+    margin: 8vh;
+    margin-left: 21vh;
+    margin-right: 21vh;
     border-radius: 6px;
     background-color: antiquewhite;
 }
