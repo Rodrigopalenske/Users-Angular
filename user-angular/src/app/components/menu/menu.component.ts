@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { AppService } from '../../services/app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -10,5 +11,5 @@ import { AppService } from '../../services/app.service';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
-  appService: AppService = new AppService();
+  appService: AppService = new AppService(new Router);
 }

@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  navegar(url:string) {
-    window.location.href = url;
+  navegar(path :string) {
+    this.router.navigate([path]);
   }
+
 }
