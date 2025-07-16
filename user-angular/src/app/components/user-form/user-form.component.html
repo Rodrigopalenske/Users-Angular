@@ -1,0 +1,70 @@
+<div class="content-user-form">
+    <h1>Cadastre-se</h1>
+    <form class="user-form">
+        <mat-form-field class="form-field">
+            <mat-label>Nome</mat-label>
+            <input type="text" matInput [formControl]="nomeFormControl" placeholder="Digite seu nome">
+            @if (nomeFormControl.hasError('required')) {
+            <mat-error>Nome é obrigatório</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. exemplo@email.com">
+            @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+            <mat-error>Insira um email válido</mat-error>
+            }
+            @if (emailFormControl.hasError('required')) {
+            <mat-error>Email é obrigatório</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+            <mat-label>Telefone</mat-label>
+            <input type="tel" name="telefone" id="telefone" class="form-control" matInput [formControl]="telefoneFormControl" [mask]="telMask">
+            @if (telefoneFormControl.hasError('mask')) {
+                <mat-error>Insira um telefone válido</mat-error>
+            }
+            @if (telefoneFormControl.hasError('required')) {
+            <mat-error>Telefone é obrigatório</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+            <mat-label>Senha</mat-label>
+            <input type="password" name="password" id="password" matInput [formControl]="passwordFormControl">
+            
+            @if (passwordFormControl.hasError('pattern')) {
+                <mat-error>Insira uma senha válida</mat-error>
+            }
+            @if (passwordFormControl.hasError('required')) {
+                <mat-error>Senha é obrigatório</mat-error>
+            }
+        </mat-form-field>
+        <div class="password-info">
+            <ul>
+                <li>A senha deve conter:</li>
+                <li>Ao menos uma letra maíuscula</li>
+                <li>Ao menos uma letra minúscula</li>
+                <li>Ao menos um número</li>
+                <li>Ao menos um caractere especial</li>    
+                <li>No mínimo 8 caracteres</li>
+            </ul>
+        </div>
+        
+        <mat-form-field class="form-field">
+            <mat-label>Confirmar Senha</mat-label>
+                
+            <input type="password" name="passwordConfirmar" id="passwordConfirmar" matInput [formControl]="passwordConfirmarFormControl">
+            @if (passwordConfirmarFormControl.hasError('passwordInvalid')) {
+                <mat-error>As senhas devem ser iguais</mat-error>
+            }
+            @if (passwordConfirmarFormControl.hasError('required')) {
+                <mat-error>Confirmar senha é obrigatório</mat-error>
+            }
+        </mat-form-field>
+        <button class="form" mat-raised-button type="submit" (click)="validarSenha()">Cadastrar</button>
+
+    </form>
+</div>
