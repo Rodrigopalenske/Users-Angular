@@ -57,8 +57,12 @@ export class UserFormComponent {
           this.appService.navegar('/');
         },
         error: (error) => {
-          console.log("Erro na requisição: " + error);
-          this.mensagem = "Não foi possível cadastrar o usuário"
+          console.log("Erro na requisição");
+          if (error.status == 0) {
+            this.mensagem = "Ops, não foi possível concluir o cadastro. Tente novamente mais tarde!"
+          } else {
+            this.mensagem = "Não foi possível cadastrar o usuário. Esse usuário pode já estar cadastrado, confira os dados"
+          }
         }
       })
     } else {

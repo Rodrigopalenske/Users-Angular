@@ -23,7 +23,7 @@
 
         <mat-form-field class="form-field">
             <mat-label>CPF</mat-label>
-            <input type="text" name="cpf" id="cpf" class="form-control" matInput formControlName="cpf" [mask]="cpfMask">
+            <input type="text" name="cpf" id="cpf" class="form-control" matInput formControlName="cpf" [mask]="cpfMask" placeholder="Digite seu CPF (apenas números)">
             @if (userForm.get('cpf')?.hasError('mask')) {
                 <mat-error>Insira um CPF válido</mat-error>
             }
@@ -34,7 +34,7 @@
 
         <mat-form-field class="form-field">
             <mat-label>Telefone</mat-label>
-            <input type="tel" name="telefone" id="telefone" class="form-control" matInput formControlName="telefone" [mask]="telMask">
+            <input type="tel" name="telefone" id="telefone" class="form-control" matInput formControlName="telefone" [mask]="telMask" placeholder="Digite seu telefone (apenas números)">
             @if (userForm.get('telefone')?.hasError('mask')) {
                 <mat-error>Insira um telefone válido</mat-error>
             }
@@ -45,7 +45,7 @@
 
         <mat-form-field class="form-field">
             <mat-label>Senha</mat-label>
-            <input type="password" name="password" id="password" matInput formControlName="password">
+            <input type="password" name="password" id="password" matInput formControlName="password" placeholder="Digite uma senha">
             
             @if (userForm.get('password')?.hasError('pattern')) {
                 <mat-error>Insira uma senha válida</mat-error>
@@ -68,7 +68,7 @@
         <mat-form-field class="form-field">
             <mat-label>Confirmar Senha</mat-label>
                 
-            <input type="password" name="passwordConfirmar" id="passwordConfirmar" matInput formControlName="passwordConfirmar">
+            <input type="password" name="passwordConfirmar" id="passwordConfirmar" matInput formControlName="passwordConfirmar" placeholder="Digite a senha novamente">
             @if (userForm.hasError('passwordDiferente')) {
                 <mat-error>As senhas devem ser iguais</mat-error>
             }
@@ -77,11 +77,13 @@
             }
         
         </mat-form-field>
-
-        <button mat-raised-button color="primary" type="submit">Cadastrar</button>
-        @if (mensagem) {
-            <mat-error>{{ mensagem }}</mat-error>
-        }
+        <div class="button-submit">
+            <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+            @if (mensagem) {
+                <mat-error>{{ mensagem }}</mat-error>
+            }
+        </div>
+        
 
     </form>
 </div>

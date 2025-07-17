@@ -22,7 +22,7 @@ public class UsuarioApi {
             service.salvar(usuario);
             return ResponseEntity.status(201).build();
         } catch (Exception e) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.badRequest().body(usuario);
         }
     }
 }

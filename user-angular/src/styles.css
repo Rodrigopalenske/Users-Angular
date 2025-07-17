@@ -11,6 +11,10 @@ button.form {
 
 }
 
+.button-submit {
+    margin-bottom: 15px;
+}
+
 .password-info ul {
     justify-items: start;
     font-size: 12px;
@@ -24,7 +28,7 @@ button.form {
 .content-user-form {
     text-align: center;
     border: ridge;
-    margin: 8vh;
+    margin: 4vh;
     margin-left: 21vh;
     margin-right: 21vh;
     border-radius: 6px;
